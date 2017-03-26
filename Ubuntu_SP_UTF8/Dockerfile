@@ -3,11 +3,13 @@ RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
+RUN adduser --disabled-password --gecos "" ubuntu
+RUN echo "ubuntu:ubuntu" | chpasswd
+RUN usermod -aG sudo ubuntu
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y openssh-server vim-nox git wget curl gcc g++
 RUN mkdir /var/run/sshd
-RUN echo 'root:root' | chpasswd
 
 EXPOSE 22
 CMD    ["/usr/sbin/sshd", "-D"]
