@@ -11,6 +11,9 @@ RUN mkdir /var/run/sshd
 ENV LANG=zh_TW.UTF-8
 ENV LANGUAGE=zh_TW.UTF-8
 ENV LC_ALL=zh_TW.UTF-8
+RUN echo "export LC_ALL=zh_TW.UTF-8" >> /home/ubuntu/.bashrc 
+RUN echo "export LANG=zh_TW.UTF-8" >> /home/ubuntu/.bashrc 
+RUN echo "export LANGUAGE=zh_TW.UTF-8" >> /home/ubuntu/.bashrc 
 RUN apt-get upgrade -y
 
 EXPOSE 22
