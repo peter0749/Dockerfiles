@@ -1,12 +1,12 @@
 FROM ubuntu:xenial
+RUN apt-get clean && apt-get update && apt-get upgrade -y
+RUN apt-get install -y locales sudo
 RUN locale-gen en_US.UTF-8
 RUN locale-gen zh_TW.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install sudo
+RUN locale-gen C.UTF-8
+ENV LANG zh_TW.UTF-8
+ENV LANGUAGE zh_TW.UTF-8
+ENV LC_ALL zh_TW.UTF-8
 RUN adduser --disabled-password --gecos "" ubuntu
 RUN echo "ubuntu:ubuntu" | chpasswd
 RUN usermod -aG sudo ubuntu
