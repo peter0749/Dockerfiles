@@ -10,6 +10,7 @@ docker pull rocker/rstudio
 docker run -td -p8787:8787 -v [host_dir]:[guest_dir] rocker/rstudio
 ```
 Then open your browser, visit 
+
 [http://localhost:8787](localhost:8787)
 
 ### Ps
