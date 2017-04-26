@@ -13,6 +13,8 @@ Then open your browser, visit
 
 [http://localhost:8787](localhost:8787)
 
+user/password: rstudio/rstudio
+
 ### Ps
 
 ```
